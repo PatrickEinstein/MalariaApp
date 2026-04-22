@@ -1,0 +1,6 @@
+// Placeholder for hospitals JSON
+[
+  { "name": "City General Hospital", "address": "123 Main St, City Center", "lat": 0.3476, "lng": 32.5825 },
+  { "name": "Community Health Clinic", "address": "45 Health Ave, Suburbia", "lat": 0.3156, "lng": 32.5656 },
+  { "name": "St. Mary’s Hospital", "address": "78 Church Rd, Riverside", "lat": 0.3201, "lng": 32.5900 }
+]
