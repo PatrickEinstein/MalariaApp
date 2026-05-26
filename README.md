@@ -50,3 +50,4 @@ This app does NOT replace medical diagnosis. Always consult healthcare professio
 
 ## License
 MIT
+# MalariaApp
