@@ -1,35 +1,83 @@
 import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
+import cn from "clsx";
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { TabBarIconProps } from '@/type';
+import { Image } from 'expo-image';
+import { Text, View } from 'react-native';
+import { TAB_ICONS } from '@/constants';
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+const TabBarIcon = ({ focused, icon, title }: TabBarIconProps) => (
+  <View className="tab-icon">
+    <Image
+      source={icon}
+      className="size-[30px]"
+    />
+    <Text className={cn('text-xs font-semibold', focused ? 'text-blue-500' : 'text-gray-500')}>{title}</Text>
+  </View>
+)
+
+const TabLayout = () => {
+
+
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          paddingTop: 10,
+          paddingBottom: 10,
+          height: 100,
+          position: "absolute",
+          borderTopWidth: 1,
+          borderTopColor: "#374151",
+          shadowColor: "#000000",
+          shadowOffset: { width: 0, height: -2 },
+          shadowOpacity: 0.3,
+          shadowRadius: 8,
+          elevation: 10
+        }
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'home',
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} title="Home" icon={TAB_ICONS.home} />
+          )
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="education"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Education',
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} title="Education" icon={TAB_ICONS.education} />
+          )
+        }}
+      />
+      <Tabs.Screen
+        name="reminders"
+        options={{
+          title: 'Reminders',
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} title="Reminders" icon={TAB_ICONS.reminders} />
+          )
+        }}
+      />
+      <Tabs.Screen
+        name="hospitals"
+        options={{
+          title: 'Hospitals',
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} title="Hospitals" icon={TAB_ICONS.hospitals} />
+          )
         }}
       />
     </Tabs>
   );
 }
+
+export default TabLayout;
