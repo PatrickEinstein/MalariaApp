@@ -35,7 +35,12 @@ This app does NOT replace medical diagnosis. Always consult healthcare professio
 
 ## Setup
 1. Install dependencies: `npm install`
-2. Start app: `npx expo start`
+2. Add Google Places API key to `.env`:
+	- `EXPO_PUBLIC_GOOGLE_MAPS_API_KEY=your_key_here`
+	- Enable `Places API` and `Maps SDK for Android` and `Maps SDK for iOS` in Google Cloud Console
+3. Start app: `npx expo start`
+4. If map tiles are blank, rebuild native app once so map keys are embedded:
+	- `npx expo run:android` or `npx expo run:ios`
 
 ---
 

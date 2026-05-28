@@ -323,7 +323,7 @@ const Home: React.FC = () => {
           </View>
         </ScrollView>
 
-        {/* FLOATING EMERGENCY BUTTON */}
+        {/* FLOATING EMERGENCY BUTTON
 
         <TouchableOpacity
           activeOpacity={0.9}
@@ -340,7 +340,7 @@ const Home: React.FC = () => {
               color="white"
             />
           </LinearGradient>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
       </View>
     </SafeAreaView>

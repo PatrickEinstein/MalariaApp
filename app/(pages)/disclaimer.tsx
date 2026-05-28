@@ -1,11 +1,5 @@
-// Placeholder for DisclaimerScreen
-import React from 'react';
-import { Text, View } from 'react-native';
+import { Redirect } from 'expo-router';
 
-const DisclaimerScreen: React.FC = () => {
-  return (
-    <View><Text>Disclaimer Screen</Text></View>
-  );
-};
-
-export default DisclaimerScreen;
+export default function DisclaimerScreen() {
+  return <Redirect href="/(tabs)/home" />;
+}

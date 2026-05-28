@@ -26,7 +26,7 @@ import fireBackground from '../assets/icons/fireBackground.png'
 import eyeOn from '../assets/icons/eyeOn.png'
 import eyeOff from '../assets/icons/eyeOff.png'
 import passCode from '../assets/icons/passCode.png'
-import education from '../assets/icons/education.png'
+import education from '../assets/icons/education.jpeg'
 import reminders from '../assets/icons/reminders.png'
 import hospitals from '../assets/icons/hospitals.png'
 
